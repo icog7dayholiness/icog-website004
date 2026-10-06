@@ -22,588 +22,692 @@
 
 <style>
 
-  /* =========================================================
-     LOW-VISION ACCESSIBILITY BASE
-  ========================================================= */
+/* =========================================================
+   LOW-VISION ACCESSIBILITY BASE
+========================================================= */
 
-  html {
-    font-size:18px;
+html {
+  font-size:18px;
+}
+
+body {
+  font-size:1.12rem;
+  line-height:1.75;
+}
+
+p,
+li {
+  line-height:1.75;
+}
+
+a {
+  text-underline-offset:.18em;
+}
+
+nav a {
+  font-size:1rem !important;
+  font-weight:700;
+}
+
+.btn {
+  min-height:48px;
+  padding:.8rem 1.25rem !important;
+  font-size:1rem !important;
+  font-weight:700;
+  line-height:1.25;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.brand {
+  display:flex;
+  align-items:center;
+}
+
+.brand strong {
+  display:block;
+  color:#ffffff !important;
+  font-size:1.2rem;
+  line-height:1.2;
+}
+
+.brand span {
+  display:block;
+  margin-top:.2rem;
+  color:#e2c675 !important;
+  font-size:.9rem;
+  font-weight:bold;
+  letter-spacing:.08em;
+  line-height:1.4;
+}
+
+.menu-btn {
+  font-size:1rem !important;
+  min-height:48px;
+  padding:.65rem 1rem;
+}
+
+/* =========================================================
+   HOUSE OF PRAYER / CHURCH PHOTO
+========================================================= */
+
+.home-intro {
+  background:#fffdf8;
+  border-bottom:1px solid #d8c79e;
+}
+
+.home-intro-inner {
+  display:grid;
+  grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+  max-width:1600px;
+  min-height:560px;
+  margin:0 auto;
+}
+
+.home-intro-copy {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(3.5rem,6vw,6.5rem)
+          clamp(2rem,5vw,5.5rem);
+}
+
+.home-intro-label {
+  display:inline-flex;
+  align-items:center;
+  gap:.75rem;
+  margin-bottom:1rem;
+  color:#85631e;
+  font-size:.9rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.home-intro-label::before {
+  content:"";
+  width:42px;
+  height:3px;
+  background:#c59a3b;
+}
+
+.home-intro h1 {
+  max-width:760px;
+  margin:0 0 1.65rem;
+  color:#0f2045;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:clamp(2.7rem,5vw,4.7rem);
+  font-weight:bold;
+  line-height:1.05;
+}
+
+.home-intro blockquote {
+  max-width:680px;
+  margin:0;
+  color:#343b45;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:clamp(1.12rem,1.45vw,1.35rem);
+  line-height:1.8;
+}
+
+.home-intro blockquote cite {
+  display:block;
+  margin-top:1.2rem;
+  color:#85631e;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:.9rem;
+  font-style:normal;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.home-intro-photo {
+  min-height:560px;
+  overflow:hidden;
+  background:#e9e5dc;
+}
+
+.home-intro-photo img {
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:560px;
+  object-fit:cover;
+  object-position:center center;
+}
+
+/* =========================================================
+   FOUNDATION
+========================================================= */
+
+.foundation-section {
+  padding:5.5rem 0;
+  background:#ffffff;
+}
+
+.foundation-inner {
+  max-width:1080px;
+  margin:0 auto;
+}
+
+.foundation-heading {
+  max-width:850px;
+  margin-bottom:3.75rem;
+}
+
+.foundation-label {
+  display:inline-flex;
+  align-items:center;
+  gap:.75rem;
+  margin-bottom:1rem;
+  color:#85631e;
+  font-size:.9rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.foundation-label::before {
+  content:"";
+  width:42px;
+  height:3px;
+  background:#c59a3b;
+}
+
+.foundation-heading h2 {
+  max-width:850px;
+  margin:0;
+  color:#0f2045;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:clamp(2.5rem,5vw,4.15rem);
+  font-weight:bold;
+  line-height:1.08;
+}
+
+/* =========================================================
+   FOUNDATION STORY
+========================================================= */
+
+.foundation-story {
+  display:grid;
+  grid-template-columns:190px minmax(0,1fr);
+  gap:clamp(2rem,5vw,4.5rem);
+  align-items:start;
+  padding:0 0 3.75rem;
+  border-bottom:1px solid #d9cfb9;
+}
+
+.foundation-date {
+  padding-top:.25rem;
+}
+
+.foundation-year {
+  display:block;
+  color:#ad812d;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:clamp(3.4rem,6vw,5rem);
+  font-weight:bold;
+  line-height:1;
+}
+
+.foundation-month {
+  display:block;
+  margin-top:.65rem;
+  color:#0f2045;
+  font-size:.9rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  line-height:1.5;
+  text-transform:uppercase;
+}
+
+.foundation-beginning {
+  display:block;
+  margin-top:1.1rem;
+  color:#85631e;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:1.12rem;
+  font-style:italic;
+  line-height:1.5;
+}
+
+.foundation-story-copy h3 {
+  margin:0 0 1rem;
+  color:#0f2045;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:clamp(1.65rem,3vw,2.25rem);
+  line-height:1.2;
+}
+
+.foundation-story-copy p {
+  max-width:70ch;
+  margin:0 0 1.4rem;
+  color:#303741;
+  font-size:1.12rem;
+  line-height:1.8;
+}
+
+.independent-statement {
+  display:inline-block;
+  margin-top:.35rem;
+  padding:.7rem 1rem;
+  border-left:4px solid #c59a3b;
+  color:#0f2045 !important;
+  font-size:1.08rem !important;
+  font-weight:800;
+  background:#fffdf8;
+}
+
+/* =========================================================
+   DOCTRINE
+========================================================= */
+
+.foundation-doctrine {
+  max-width:920px;
+  margin:3.75rem 0 0;
+  padding:2.4rem 2.6rem;
+  background:#fffaf0;
+  border-left:5px solid #c59a3b;
+  box-shadow:0 10px 28px rgba(15,32,69,.06);
+}
+
+.doctrine-label {
+  margin-bottom:.8rem;
+  color:#85631e;
+  font-size:.9rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.foundation-doctrine blockquote {
+  margin:0;
+  color:#0f2045;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:clamp(1.35rem,2.6vw,1.9rem);
+  line-height:1.65;
+}
+
+/* =========================================================
+   BIBLE / HOLY SPIRIT FEATURE
+========================================================= */
+
+.faith-feature {
+  background:#fffdf8;
+  border-top:1px solid #e0d6c0;
+  border-bottom:1px solid #d8c79e;
+}
+
+.faith-feature-inner {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  min-height:520px;
+}
+
+.faith-image {
+  min-height:520px;
+  background-color:#e9e2d4;
+  background-image:url("assets/images/open-bible.jpg");
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+
+.faith-copy {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(3.5rem,6vw,6rem);
+}
+
+.faith-label {
+  display:inline-flex;
+  align-items:center;
+  gap:.75rem;
+  margin-bottom:1rem;
+  color:#85631e;
+  font-size:.9rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.faith-label::before {
+  content:"";
+  width:42px;
+  height:3px;
+  background:#c59a3b;
+}
+
+.faith-copy h2 {
+  max-width:720px;
+  margin:0 0 1.5rem;
+  color:#0f2045;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:clamp(2.35rem,4.5vw,4rem);
+  line-height:1.08;
+}
+
+.foundation-closing {
+  max-width:760px;
+}
+
+.foundation-closing p {
+  margin:0 0 1.45rem;
+  color:#303741;
+  font-size:1.12rem;
+  line-height:1.8;
+}
+
+.foundation-greeting {
+  margin-top:1.8rem !important;
+  color:#594420 !important;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:1.3rem !important;
+  line-height:1.7 !important;
+}
+
+.foundation-blessing {
+  display:inline-block;
+  margin-top:.4rem;
+  color:#85631e;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:1.4rem;
+  font-weight:bold;
+}
+
+/* =========================================================
+   COME WORSHIP WITH US
+========================================================= */
+
+.visit-section {
+  padding:5rem 0;
+  background:#ffffff;
+}
+
+.visit-layout {
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:clamp(2rem,6vw,5rem);
+  align-items:center;
+}
+
+.visit-label {
+  display:inline-flex;
+  align-items:center;
+  gap:.7rem;
+  margin-bottom:1rem;
+  color:#85631e;
+  font-size:.9rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.visit-label::before {
+  content:"";
+  width:42px;
+  height:3px;
+  background:#c59a3b;
+}
+
+.visit-copy h2 {
+  max-width:700px;
+  margin:0;
+  color:#0f2045;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:clamp(2.7rem,5vw,4.8rem);
+  line-height:1.06;
+}
+
+.visit-details {
+  padding-left:2.5rem;
+  border-left:1px solid #cfc5ad;
+}
+
+.visit-details strong {
+  display:block;
+  margin-bottom:.65rem;
+  color:#0f2045;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:1.5rem;
+  line-height:1.35;
+}
+
+.visit-details p {
+  margin:0 0 1.5rem;
+  color:#303741;
+  font-size:1.12rem;
+  line-height:1.75;
+}
+
+/* =========================================================
+   FOOTER ACCESSIBILITY
+========================================================= */
+
+footer h3 {
+  font-size:1.2rem !important;
+  line-height:1.3;
+}
+
+footer p,
+footer a {
+  font-size:1rem !important;
+  line-height:1.7;
+}
+
+.copyright {
+  font-size:.95rem !important;
+  line-height:1.6;
+}
+
+/* =========================================================
+   FOOTER CONTACT ITEMS
+========================================================= */
+
+.footer-contact-list {
+  display:flex;
+  flex-direction:column;
+  gap:.85rem;
+  margin-top:1rem;
+}
+
+.footer-contact-item {
+  display:flex;
+  align-items:flex-start;
+  gap:.65rem;
+  line-height:1.6;
+}
+
+.footer-contact-icon {
+  display:inline-flex;
+  width:24px;
+  height:24px;
+  flex:0 0 24px;
+  align-items:center;
+  justify-content:center;
+  margin-top:.15rem;
+  color:#e2c675;
+}
+
+.footer-contact-icon svg {
+  display:block;
+  width:21px;
+  height:21px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.footer-contact-text {
+  min-width:0;
+}
+
+.footer-contact-label {
+  color:#ffffff;
+  font-weight:800;
+}
+
+.footer-contact-item a {
+  overflow-wrap:anywhere;
+}
+
+/* =========================================================
+   FOCUS VISIBILITY
+========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline:3px solid #f1c75b;
+  outline-offset:4px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px) {
+
+  .home-intro-inner {
+    grid-template-columns:1fr 1fr;
   }
 
-  body {
-    font-size:1.12rem;
-    line-height:1.75;
+  .home-intro-copy {
+    padding:3.5rem 2.5rem;
   }
 
-  p,
-  li {
-    line-height:1.75;
+  .faith-copy {
+    padding:3.5rem;
   }
 
-  a {
-    text-underline-offset:.18em;
+}
+
+@media(max-width:900px) {
+
+  .home-intro-inner,
+  .faith-feature-inner {
+    grid-template-columns:1fr;
   }
 
-  nav a {
-    font-size:1rem !important;
-    font-weight:700;
+  .home-intro-photo,
+  .home-intro-photo img {
+    min-height:430px;
   }
 
-  .btn {
-    min-height:48px;
-    padding:.8rem 1.25rem !important;
-    font-size:1rem !important;
-    font-weight:700;
-    line-height:1.25;
+  .faith-image {
+    min-height:390px;
   }
-
-  /* =========================================================
-     HEADER
-  ========================================================= */
-
-  .brand {
-    display:flex;
-    align-items:center;
-  }
-
-  .brand strong {
-    display:block;
-    color:#ffffff !important;
-    font-size:1.2rem;
-    line-height:1.2;
-  }
-
-  .brand span {
-    display:block;
-    margin-top:.2rem;
-    color:#e2c675 !important;
-    font-size:.9rem;
-    font-weight:bold;
-    letter-spacing:.08em;
-    line-height:1.4;
-  }
-
-  .menu-btn {
-    font-size:1rem !important;
-    min-height:48px;
-    padding:.65rem 1rem;
-  }
-
-  /* =========================================================
-     HOME BANNER
-  ========================================================= */
-
-  .home-banner {
-    width:100%;
-    margin:0;
-    padding:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-    background:#f7f3e8;
-    border-bottom:1px solid #d8c79e;
-  }
-  
-  .home-banner-image {
-    display:block;
-    width:100%;
-    max-width:none;
-    height:auto;
-    margin:0 auto;
-    padding:0;
-    object-fit:contain;
-    filter:none;
-    opacity:1;
-    box-shadow:none;
-  }
-
-  /* =========================================================
-     HOUSE OF PRAYER
-  ========================================================= */
-
-  .prayer-section {
-    padding:4rem 0 4.25rem;
-    background:#ffffff;
-    border-bottom:1px solid #cfc5ad;
-  }
-
-  .prayer-inner {
-    max-width:900px;
-    margin:0 auto;
-    text-align:center;
-  }
-
-  .prayer-title,
-  .foundation-heading h2 {
-    max-width:800px;
-    margin:0;
-    color:#0f2045;
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:clamp(2.5rem,5vw,4.15rem);
-    font-weight:bold;
-    line-height:1.08;
-  }
-
-  .prayer-title {
-    margin:0 auto 1.5rem;
-  }
-
-  .prayer-quote {
-    max-width:790px;
-    margin:0 auto;
-    color:#343b45;
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:clamp(1.12rem,1.7vw,1.4rem);
-    line-height:1.8;
-  }
-
-  .prayer-quote cite {
-    display:block;
-    margin-top:1.1rem;
-    color:#85631e;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:.9rem;
-    font-style:normal;
-    font-weight:800;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-  }
-
-  /* =========================================================
-     FOUNDATION
-  ========================================================= */
-
-  .foundation-section {
-    padding:5rem 0;
-    background:#fffdf8;
-  }
-
-  .foundation-inner {
-    max-width:1000px;
-    margin:0 auto;
-  }
-
-  .foundation-heading {
-    max-width:820px;
-    margin-bottom:3.5rem;
-  }
-
-  .foundation-label {
-    display:inline-flex;
-    align-items:center;
-    gap:.75rem;
-    margin-bottom:1rem;
-    color:#85631e;
-    font-size:.9rem;
-    font-weight:800;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-  }
-
-  .foundation-label::before {
-    content:"";
-    width:42px;
-    height:3px;
-    background:#c59a3b;
-  }
-
-  /* =========================================================
-     FOUNDATION STORY
-  ========================================================= */
 
   .foundation-story {
-    display:grid;
-    grid-template-columns:190px minmax(0,1fr);
-    gap:clamp(2rem,5vw,4.5rem);
-    align-items:start;
-    padding:0 0 3.5rem;
-    border-bottom:1px solid #cfc5ad;
-  }
-
-  .foundation-date {
-    padding-top:.25rem;
-  }
-
-  .foundation-year {
-    display:block;
-    color:#ad812d;
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:clamp(3.4rem,6vw,5rem);
-    font-weight:bold;
-    line-height:1;
-  }
-
-  .foundation-month {
-    display:block;
-    margin-top:.65rem;
-    color:#0f2045;
-    font-size:.9rem;
-    font-weight:800;
-    letter-spacing:.12em;
-    line-height:1.5;
-    text-transform:uppercase;
-  }
-
-  .foundation-beginning {
-    display:block;
-    margin-top:1.1rem;
-    color:#85631e;
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:1.12rem;
-    font-style:italic;
-    line-height:1.5;
-  }
-
-  .foundation-story-copy h3 {
-    margin:0 0 1rem;
-    color:#0f2045;
-    font-size:clamp(1.65rem,3vw,2.25rem);
-    line-height:1.2;
-  }
-
-  .foundation-story-copy p {
-    max-width:70ch;
-    margin:0 0 1.4rem;
-    color:#303741;
-    font-size:1.12rem;
-    line-height:1.8;
-  }
-
-  .independent-statement {
-    display:inline-block;
-    margin-top:.35rem;
-    padding:.7rem 1rem;
-    border-left:4px solid #c59a3b;
-    color:#0f2045 !important;
-    font-size:1.08rem !important;
-    font-weight:800;
-    background:#ffffff;
-  }
-
-  /* =========================================================
-     DOCTRINE
-  ========================================================= */
-
-  .foundation-doctrine {
-    max-width:850px;
-    margin:3.5rem 0;
-    padding:2.2rem 2.4rem;
-    background:#ffffff;
-    border-left:5px solid #c59a3b;
-    box-shadow:0 8px 24px rgba(15,32,69,.06);
-  }
-
-  .doctrine-label {
-    margin-bottom:.8rem;
-    color:#85631e;
-    font-size:.9rem;
-    font-weight:800;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-  }
-
-  .foundation-doctrine blockquote {
-    margin:0;
-    color:#0f2045;
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:clamp(1.35rem,2.6vw,1.9rem);
-    line-height:1.65;
-  }
-
-  /* =========================================================
-     FOUNDATION CLOSING
-  ========================================================= */
-
-  .foundation-closing {
-    max-width:820px;
-  }
-
-  .foundation-closing p {
-    max-width:70ch;
-    margin:0 0 1.45rem;
-    color:#303741;
-    font-size:1.12rem;
-    line-height:1.8;
-  }
-
-  .foundation-greeting {
-    margin-top:2rem !important;
-    color:#594420 !important;
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:1.3rem !important;
-    line-height:1.7 !important;
-  }
-
-  .foundation-blessing {
-    display:inline-block;
-    margin-top:.4rem;
-    color:#85631e;
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:1.4rem;
-    font-weight:bold;
-  }
-
-  /* =========================================================
-     COME WORSHIP WITH US
-  ========================================================= */
-
-  .visit-section {
-    background:#ffffff;
-    border-top:1px solid #c9b98f;
+    grid-template-columns:150px minmax(0,1fr);
+    gap:2.5rem;
   }
 
   .visit-layout {
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:clamp(2rem,6vw,5rem);
-    align-items:center;
-  }
-
-  .visit-label {
-    display:inline-flex;
-    align-items:center;
-    gap:.7rem;
-    margin-bottom:1rem;
-    color:#85631e;
-    font-size:.9rem;
-    font-weight:800;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-  }
-
-  .visit-label::before {
-    content:"";
-    width:42px;
-    height:3px;
-    background:#c59a3b;
-  }
-
-  .visit-copy h2 {
-    max-width:700px;
-    margin:0;
-    color:#0f2045;
-    font-size:clamp(2.7rem,5vw,4.8rem);
-    line-height:1.06;
+    grid-template-columns:1fr;
   }
 
   .visit-details {
-    padding-left:2.5rem;
-    border-left:1px solid #cfc5ad;
+    padding-top:2rem;
+    padding-left:0;
+    border-top:1px solid #cfc5ad;
+    border-left:0;
   }
 
-  .visit-details strong {
-    display:block;
-    margin-bottom:.65rem;
-    color:#0f2045;
-    font-family:Georgia, "Times New Roman", serif;
-    font-size:1.5rem;
-    line-height:1.35;
+}
+
+@media(max-width:700px) {
+
+  .home-intro-copy {
+    padding:3.25rem 1.35rem 3.5rem;
   }
 
+  .home-intro-photo,
+  .home-intro-photo img {
+    min-height:330px;
+  }
+
+  .foundation-section {
+    padding:4rem 0;
+  }
+
+  .foundation-heading {
+    margin-bottom:2.75rem;
+  }
+
+  .foundation-story {
+    grid-template-columns:1fr;
+    gap:1.5rem;
+  }
+
+  .foundation-date {
+    padding-bottom:1.5rem;
+    border-bottom:1px solid #d9cfb9;
+  }
+
+  .foundation-year {
+    font-size:3.8rem;
+  }
+
+  .foundation-month,
+  .foundation-beginning {
+    display:inline-block;
+    margin-right:1rem;
+  }
+
+  .faith-copy {
+    padding:3.5rem 1.35rem;
+  }
+
+  .faith-image {
+    min-height:320px;
+  }
+
+}
+
+@media(max-width:560px) {
+
+  html {
+    font-size:17px;
+  }
+
+  .brand strong {
+    font-size:1.08rem;
+    color:#ffffff !important;
+  }
+
+  .brand span {
+    font-size:.88rem;
+    letter-spacing:.06em;
+  }
+
+  .home-intro h1,
+  .foundation-heading h2 {
+    font-size:clamp(2.35rem,10vw,3rem);
+  }
+
+  .foundation-doctrine {
+    padding:1.7rem 1.45rem;
+  }
+
+  .foundation-story-copy p,
+  .foundation-closing p,
   .visit-details p {
-    margin:0 0 1.5rem;
-    color:#303741;
     font-size:1.12rem;
-    line-height:1.75;
-  }
-
-  /* =========================================================
-     FOOTER ACCESSIBILITY
-  ========================================================= */
-
-  footer h3 {
-    font-size:1.2rem !important;
-    line-height:1.3;
   }
 
   footer p,
   footer a {
     font-size:1rem !important;
-    line-height:1.7;
-  }
-
-  .copyright {
-    font-size:.95rem !important;
-    line-height:1.6;
-  }
-
-  /* =========================================================
-     FOOTER CONTACT ITEMS
-  ========================================================= */
-
-  .footer-contact-list {
-    display:flex;
-    flex-direction:column;
-    gap:.85rem;
-    margin-top:1rem;
-  }
-
-  .footer-contact-item {
-    display:flex;
-    align-items:flex-start;
-    gap:.65rem;
-    line-height:1.6;
-  }
-
-  .footer-contact-icon {
-    display:inline-flex;
-    width:24px;
-    height:24px;
-    flex:0 0 24px;
-    align-items:center;
-    justify-content:center;
-    margin-top:.15rem;
-    color:#e2c675;
-  }
-
-  .footer-contact-icon svg {
-    display:block;
-    width:21px;
-    height:21px;
-    fill:none;
-    stroke:currentColor;
-    stroke-width:2;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-  }
-
-  .footer-contact-text {
-    min-width:0;
-  }
-
-  .footer-contact-label {
-    color:#ffffff;
-    font-weight:800;
-  }
-
-  .footer-contact-item a {
-    overflow-wrap:anywhere;
-  }
-
-  /* =========================================================
-     FOCUS VISIBILITY
-  ========================================================= */
-
-  a:focus-visible,
-  button:focus-visible {
-    outline:3px solid #f1c75b;
-    outline-offset:4px;
-  }
-
-  /* =========================================================
-     RESPONSIVE
-  ========================================================= */
-
-  @media(max-width:900px) {
-
-    .foundation-story {
-      grid-template-columns:150px minmax(0,1fr);
-      gap:2.5rem;
-    }
-
-    .visit-layout {
-      grid-template-columns:1fr;
-    }
-
-    .visit-details {
-      padding-top:2rem;
-      padding-left:0;
-      border-top:1px solid #cfc5ad;
-      border-left:0;
-    }
-
-  }
-
-  @media(max-width:700px) {
-
-    .prayer-section {
-      padding:3.25rem 0 3.5rem;
-    }
-
-    .foundation-section {
-      padding:4rem 0;
-    }
-
-    .foundation-heading {
-      margin-bottom:2.75rem;
-    }
-
-    .foundation-story {
-      grid-template-columns:1fr;
-      gap:1.5rem;
-    }
-
-    .foundation-date {
-      padding-bottom:1.5rem;
-      border-bottom:1px solid #d9cfb9;
-    }
-
-    .foundation-year {
-      font-size:3.8rem;
-    }
-
-    .foundation-month,
-    .foundation-beginning {
-      display:inline-block;
-      margin-right:1rem;
-    }
-
-  }
-
-  @media(max-width:560px) {
-
-    html {
-      font-size:17px;
-    }
-
-    .brand strong {
-      font-size:1.08rem;
-      color:#ffffff !important;
-    }
-
-    .brand span {
-      font-size:.88rem;
-      letter-spacing:.06em;
-    }
-
-    .prayer-title,
-    .foundation-heading h2 {
-      font-size:clamp(2.35rem,10vw,3rem);
-    }
-
-    .foundation-doctrine {
-      padding:1.7rem 1.45rem;
-    }
-
-    .foundation-story-copy p,
-    .foundation-closing p,
-    .visit-details p {
-      font-size:1.12rem;
-    }
-
-    footer p,
-    footer a {
-      font-size:1rem !important;
-    }
-
-  }
-
-@media (min-width:1800px) {
-
-  .home-banner {
-    height:500px;
-    background:#f7f3e8;
-  }
-
-  .home-banner-image {
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    object-position:center center;
   }
 
 }
+
 </style>
 </head>
 
@@ -688,34 +792,25 @@ Visit Us
 
 <main id="main">
 
-<!-- CHURCH BANNER -->
+<!-- =========================================================
+     HOUSE OF PRAYER + CHURCH PHOTO
+========================================================= -->
 
-<section
-  class="home-banner"
-  aria-label="Israel Church of God"
->
+<section class="home-intro">
 
-<img
-  class="home-banner-image"
-  src="assets/images/church-wide.jpg"
-  alt="Israel Church of God, church sign, and grounds in San Bernardino"
->
+<div class="home-intro-inner">
 
-</section>
+<div class="home-intro-copy">
 
-<!-- HOUSE OF PRAYER -->
+<div class="home-intro-label">
+A House of Prayer
+</div>
 
-<section class="prayer-section">
-
-<div class="container">
-
-<div class="prayer-inner">
-
-<h1 class="prayer-title">
+<h1>
 A House of Prayer for All People
 </h1>
 
-<blockquote class="prayer-quote">
+<blockquote>
 
 “Even them will I bring to my holy mountain, and make them
 joyful in my house of prayer: their burnt offerings and their
@@ -730,11 +825,22 @@ Isaiah 56:7
 
 </div>
 
+<div class="home-intro-photo">
+
+<img
+  src="assets/images/church-front.jpg"
+  alt="Israel Church of God in San Bernardino"
+>
+
+</div>
+
 </div>
 
 </section>
 
-<!-- OUR FOUNDATION -->
+<!-- =========================================================
+     OUR FOUNDATION
+========================================================= -->
 
 <section class="foundation-section">
 
@@ -809,7 +915,35 @@ other doctrine shall we know, so says the Holy Spirit.
 
 </div>
 
-<!-- FOUNDATION CLOSING -->
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================================================
+     BIBLE / HOLY SPIRIT FEATURE
+========================================================= -->
+
+<section class="faith-feature">
+
+<div class="faith-feature-inner">
+
+<div
+  class="faith-image"
+  role="img"
+  aria-label="An open Bible resting in sunlight"
+></div>
+
+<div class="faith-copy">
+
+<div class="faith-label">
+Led by the Holy Spirit
+</div>
+
+<h2>
+Obedience Is the Key to Righteousness
+</h2>
 
 <div class="foundation-closing">
 
@@ -841,7 +975,9 @@ May God richly bless you.
 
 </section>
 
-<!-- COME WORSHIP WITH US -->
+<!-- =========================================================
+     COME WORSHIP WITH US
+========================================================= -->
 
 <section class="section visit-section">
 
@@ -935,10 +1071,15 @@ San Bernardino, CA 92411
 </span>
 
 <div class="footer-contact-text">
-<span class="footer-contact-label">Phone:</span>
+
+<span class="footer-contact-label">
+Phone:
+</span>
+
 <a href="tel:+19094730026">
 (909) 473-0026
 </a>
+
 </div>
 
 </div>
@@ -956,10 +1097,15 @@ San Bernardino, CA 92411
 </span>
 
 <div class="footer-contact-text">
-<span class="footer-contact-label">Email:</span>
+
+<span class="footer-contact-label">
+Email:
+</span>
+
 <a href="mailto:icog7@outlook.com">
 icog7@outlook.com
 </a>
+
 </div>
 
 </div>
@@ -979,7 +1125,11 @@ icog7@outlook.com
 </span>
 
 <div class="footer-contact-text">
-<span class="footer-contact-label">Website:</span>
+
+<span class="footer-contact-label">
+Website:
+</span>
+
 <a
   href="https://icog7dayholiness.com"
   target="_blank"
@@ -987,6 +1137,7 @@ icog7@outlook.com
 >
 icog7dayholiness.com
 </a>
+
 </div>
 
 </div>
