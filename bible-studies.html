@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -200,7 +199,7 @@ nav a {
 
 .study-visual {
   position:relative;
-  min-height:470px;
+  min-height:560px;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -260,15 +259,20 @@ nav a {
   transform:translateX(-50%);
 }
 
+/* =========================================================
+   VERTICAL WEEK TIMELINE
+========================================================= */
+
 .timeline-mini {
   position:relative;
   z-index:1;
+  width:100%;
 }
 
 .timeline-mini-label {
   margin-bottom:1rem;
   color:#e2c675;
-  font-size:.82rem;
+  font-size:.85rem;
   font-weight:800;
   letter-spacing:.14em;
   text-transform:uppercase;
@@ -276,23 +280,27 @@ nav a {
 
 .timeline-mini-grid {
   display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:.35rem;
+  grid-template-columns:1fr;
+  gap:.75rem;
+  width:100%;
 }
 
 .timeline-mini-item {
-  padding-top:.55rem;
+  width:100%;
+  padding:.6rem 0 0;
   border-top:2px solid rgba(226,198,117,.72);
-  font-size:.78rem;
+  font-size:.9rem;
   font-weight:700;
-  line-height:1.35;
+  line-height:1.4;
+  box-sizing:border-box;
 }
 
 .timeline-mini-item strong {
   display:block;
+  margin-bottom:.05rem;
   color:#e2c675;
-  font-size:.75rem;
-  letter-spacing:.05em;
+  font-size:.82rem;
+  letter-spacing:.06em;
   text-transform:uppercase;
 }
 
@@ -352,6 +360,7 @@ nav a {
   border:2px solid #0f2045;
   font-weight:800;
   text-decoration:none;
+  box-sizing:border-box;
 }
 
 .study-actions .btn-secondary:hover,
@@ -361,7 +370,7 @@ nav a {
 }
 
 /* =========================================================
-   STUDY NOTE
+   ABOUT THE STUDY
 ========================================================= */
 
 .study-note-section {
@@ -462,6 +471,10 @@ footer a {
   overflow-wrap:anywhere;
 }
 
+/* =========================================================
+   FOCUS VISIBILITY
+========================================================= */
+
 a:focus-visible,
 button:focus-visible {
   outline:3px solid #f1c75b;
@@ -479,11 +492,11 @@ button:focus-visible {
   }
 
   .study-visual {
-    min-height:360px;
+    min-height:520px;
   }
 
   .cross-wrap {
-    height:145px;
+    height:150px;
   }
 
 }
@@ -507,17 +520,12 @@ button:focus-visible {
   }
 
   .study-visual {
-    min-height:330px;
+    min-height:520px;
     padding:2rem 1.35rem;
   }
 
-  .timeline-mini-grid {
-    grid-template-columns:1fr;
-    gap:.7rem;
-  }
-
-  .timeline-mini-item {
-    padding:.45rem 0 0;
+  .cross-wrap {
+    height:145px;
   }
 
   .study-copy {
@@ -536,6 +544,10 @@ button:focus-visible {
 
   .study-note-section {
     padding:0 1.35rem 4rem;
+  }
+
+  .study-note {
+    padding:1.75rem 1.35rem;
   }
 
 }
@@ -561,6 +573,14 @@ button:focus-visible {
 
   .study-copy h2 {
     font-size:clamp(2.1rem,9vw,2.8rem);
+  }
+
+  .timeline-mini-item {
+    font-size:.95rem;
+  }
+
+  .timeline-mini-item strong {
+    font-size:.85rem;
   }
 
 }
@@ -687,6 +707,8 @@ Featured Study
 
 <article class="featured-study">
 
+<!-- LEFT VISUAL PANEL -->
+
 <div class="study-visual" aria-hidden="true">
 
 <div class="cross-wrap">
@@ -731,6 +753,8 @@ Empty tomb found
 </div>
 
 </div>
+
+<!-- RIGHT STUDY CONTENT -->
 
 <div class="study-copy">
 
@@ -843,24 +867,35 @@ San Bernardino, CA 92411
 
 <div class="footer-contact-item">
 
-<span class="footer-contact-icon" aria-hidden="true">
+<span
+  class="footer-contact-icon"
+  aria-hidden="true"
+>
 <svg viewBox="0 0 24 24">
   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>
 </svg>
 </span>
 
 <div class="footer-contact-text">
-<span class="footer-contact-label">Phone:</span>
+
+<span class="footer-contact-label">
+Phone:
+</span>
+
 <a href="tel:+19094730026">
 (909) 473-0026
 </a>
+
 </div>
 
 </div>
 
 <div class="footer-contact-item">
 
-<span class="footer-contact-icon" aria-hidden="true">
+<span
+  class="footer-contact-icon"
+  aria-hidden="true"
+>
 <svg viewBox="0 0 24 24">
   <rect x="3" y="5" width="18" height="14" rx="2"/>
   <path d="m3 7 9 6 9-6"/>
@@ -868,17 +903,25 @@ San Bernardino, CA 92411
 </span>
 
 <div class="footer-contact-text">
-<span class="footer-contact-label">Email:</span>
+
+<span class="footer-contact-label">
+Email:
+</span>
+
 <a href="mailto:icog7@outlook.com">
 icog7@outlook.com
 </a>
+
 </div>
 
 </div>
 
 <div class="footer-contact-item">
 
-<span class="footer-contact-icon" aria-hidden="true">
+<span
+  class="footer-contact-icon"
+  aria-hidden="true"
+>
 <svg viewBox="0 0 24 24">
   <circle cx="12" cy="12" r="9"/>
   <path d="M3 12h18"/>
